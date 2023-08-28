@@ -1,0 +1,16 @@
+<h1>Account: <%= @account.name %></h1>
+
+<h1>Account number: <%= @account.account_number %></h1>
+
+<h1>Bank: <%= @account.bank_name %></h1>
+
+<h1>Currency: <%= @account.currency %></h1>
+
+<h1>Balance: <%= @account.show_balance %></h1>
+
+<%= link_to "Edit", edit_account_path(@account) %> - 
+<%= link_to "Destroy", account_path(@account), data: {
+	turbo_method: :delete,
+	turbo_confirm: "Are you sure?"
+} %>
+<%= link_to "Go back to accounts", accounts_path %>
