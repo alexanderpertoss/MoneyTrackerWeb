@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   def index
     @accounts = Account.all
+    @transactions = Transaction.last(5)
   end
 
   def show

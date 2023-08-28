@@ -7,3 +7,12 @@
 		</li>
 	<% end %>
 </ul>
+
+<h1>Last transactions:</h1>
+<% @transactions.each do |transaction| %>
+	Account: <%= transaction.account.name %>, 
+	Transaction #:<%= transaction.id %>, 
+	Amount: <%= transaction.show_amount %>,
+	Type: <%= transaction.show_transaction_type %>
+	<br>
+<% end %>

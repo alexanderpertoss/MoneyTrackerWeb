@@ -14,3 +14,25 @@
 	turbo_confirm: "Are you sure?"
 } %>
 <%= link_to "Go back to accounts", accounts_path %>
+
+<h2>Transactions</h2>
+<% @account.transactions.each do |transaction| %>
+	Transaction #<%= transaction.id %>
+	Amount: <%= transaction.amount %> - 
+	Type: <%= transaction.show_transaction_type %><br>
+<% end %>
+
+<h2>Registrar a transaction</h2>
+<%= form_with model: [ @account, @account.transactions.build ] do |form| %>
+	<p>
+		<%= form.label :amount %>
+		<%= form.number_field :amount %>
+	</p>
+	<p>
+		<%= form.label :transaction_type %>
+		<%= form.number_field :transaction_type %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
